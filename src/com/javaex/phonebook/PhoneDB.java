@@ -36,7 +36,6 @@ public class PhoneDB {
 		InputStreamReader isr=new InputStreamReader(in);
 		BufferedReader br=new BufferedReader(isr);
 		
-		
 		String str;
 		
 		//한줄씩읽기
@@ -90,16 +89,13 @@ public class PhoneDB {
   ////메뉴번호 1일떄
 			}else if(num==1) {
 					
-				
 				//출력
 				System.out.println("<1.리스트>");
 				for (int i=0; i<personList.size(); i++) {
 					System.out.print((i+1)+".   ");
 					personList.get(i).showInfo();
 				}
-				
-			
-				
+		
 		
   /////메뉴번호 2일떄			
 			}else if(num==2) {
@@ -109,7 +105,6 @@ public class PhoneDB {
 				OutputStreamWriter osw=new OutputStreamWriter(out);
 				BufferedWriter bw=new BufferedWriter(osw);
 				
-		
 				sc.nextLine();		//숫자 쓰던걸 문자로 바꿔주기
 				
 				System.out.println("<2.등록>");
@@ -128,8 +123,8 @@ public class PhoneDB {
 					bw.newLine();
 				}
 				
-				
 				bw.close();
+				
 				
     /////메뉴번호 3일떄				
 			}else if(num==3) {
@@ -138,7 +133,6 @@ public class PhoneDB {
 				OutputStream out=new FileOutputStream("C:\\javaStudy\\PhoneDB.txt");
 				OutputStreamWriter osw=new OutputStreamWriter(out);
 				BufferedWriter bw=new BufferedWriter(osw);
-				
 				
 				System.out.println("<3.삭제>");
 				System.out.println(">번호: ");
@@ -162,17 +156,27 @@ public class PhoneDB {
 				System.out.println("<4.검색>");
 				System.out.print(">이름: ");
 				String search = sc.nextLine();
+		
+		//---내가찾는글자가 없을때, 있을때
+				boolean s=false;
 				
 				for(int i = 0; i< personList.size(); i++) {
-	
+				
+		//----있을때 나타나는 문장
 					if(personList.get(i).getName().contains(search)) {
 						System.out.print((i+1)+".   ");
 						personList.get(i).showInfo();
+						s=true;
 					}
+					
 				}
 				
+		//----없을때 나타나는 문장		
+				if(s==false) {
+					System.out.println("검색어와 일치하는 이름이 없습니다.");
+				}
 				
-	   /////메뉴번호 없는 번호일떄
+	 /////메뉴번호 없는 번호일떄
 			}else {
 				
 				System.out.println("[다시 입력해 주세요.]");
