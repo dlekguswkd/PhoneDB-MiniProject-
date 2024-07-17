@@ -62,7 +62,7 @@ public class PhoneDB {
 			//리스트에 담는다
 			personList.add(person);
 				
-		}			
+		}	//while문 끝			
 //=========리스트생성 끝		
 		
 		
@@ -176,14 +176,14 @@ public class PhoneDB {
 					System.out.println("검색어와 일치하는 이름이 없습니다.");
 				}
 				
-	 /////메뉴번호 없는 번호일떄
+	/////메뉴번호 없는 번호일떄
 			}else {
 				
 				System.out.println("[다시 입력해 주세요.]");
 			
 			}
 		
-		}
+		}	//while문 끝
 		
 /////	끝	
 		br.close();
