@@ -71,11 +71,15 @@ public class SwitchCaseVersion {
 							break;
 						}
 					
-						String[] re = str.split(",");
-					
-						personList.add(new Person(re[0], re[1], re[2]));
-					
-					}
+						String[] personInfo=str.split(",");
+						String name=personInfo[0];
+						String hp=personInfo[1];
+						String company=personInfo[2];
+						
+						Person person=new Person(name, hp, company);
+						
+						
+						personList.add(person);
 					
 					for (int i = 0; i <personList.size(); i++ ) {
 						System.out.print( (i+1) );
@@ -83,11 +87,7 @@ public class SwitchCaseVersion {
 					}
 					
 					
-					/*
-					for (Person info : pList) {
-						info.showInfo();
 					}
-					*/
 					break;
 				
     ////메뉴번호 2일떄			
